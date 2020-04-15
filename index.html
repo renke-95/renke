@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    input{
+        width: 30px;
+        height: 30px;
+    }
+    div{
+        width: 300px;
+        height: 200px;
+        background-color: gray;
+         display: none;
+    }
+    .ss{
+        background-color: greenyellow;
+    }
+    
+    
+    
+    </style>
+</head>
+<body>
+    <input type="button" value="1" class="ss">
+    <input type="button" value="2">
+    <input type="button" value="3">
+    <input type="button" value="4">
+    <div style="display: block;">222</div>
+    <div>333</div>
+    <div>444</div>
+    <div>555</div>
+    
+    <script>
+    //思路:1.多个按钮点击-for循环 2.点击当前,展现对应盒子 3.1当前按钮和盒子激活,其它按钮和盒子全部隐藏
+    var input=document.getElementsByTagName("input")
+    var div=document.getElementsByTagName("div")
+    for(var i=0;i<input.length;i++){
+        input[i].onclick=function(){
+            for(var i=0;i<input.length;i++){
+            if(this==input[i]){
+                div[i].style.display="block";
+                this.className="ss";  
+            }else{
+                div[i].style.display="none";
+                input[i].className="";
+        
+            }
+       
+        }
+       
+        }
+       
+    }
+    
+    
+    
+    </script>
+    
+</body>
+</html>
